@@ -6,7 +6,8 @@
 ## 数字证书
 * 数字证书: http://www.cnblogs.com/hyddd/archive/2009/01/07/1371292.html
 * 数字证书和SSL: http://www.2cto.com/Article/201203/121534.html 
-* 数字签名: http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
+* 数字签名: http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
+* 浅析数字证书： http://www.cnblogs.com/hyddd/archive/2009/01/07/1371292.html
 
 ## Java数字证书体系
 * http://snowolf.iteye.com/blog/391931
