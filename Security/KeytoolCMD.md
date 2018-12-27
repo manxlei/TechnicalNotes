@@ -1,16 +1,16 @@
 ## 生成自签名证书：
-https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-using-java-keytool.html
-http://blog.csdn.net/lapiggy/article/details/2808124
-http://blog.csdn.net/tony1130/article/details/5134318
+* https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-using-java-keytool.html
+* http://blog.csdn.net/lapiggy/article/details/2808124
+* http://blog.csdn.net/tony1130/article/details/5134318
 
 ## 数字证书
-数字证书: http://www.cnblogs.com/hyddd/archive/2009/01/07/1371292.html
-数字证书和SSL: http://www.2cto.com/Article/201203/121534.html 
-数字签名: http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
+* 数字证书: http://www.cnblogs.com/hyddd/archive/2009/01/07/1371292.html
+* 数字证书和SSL: http://www.2cto.com/Article/201203/121534.html 
+* 数字签名: http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
 
 ## Java数字证书体系
-http://snowolf.iteye.com/blog/391931
-http://snowolf.iteye.com/blog/383412
+* http://snowolf.iteye.com/blog/391931
+* http://snowolf.iteye.com/blog/383412
 
 ## 常见KeyStore文件格式
 格式    :  JKS 
