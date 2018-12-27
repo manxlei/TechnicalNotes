@@ -13,7 +13,7 @@
 * http://snowolf.iteye.com/blog/383412
 
 ## 常见KeyStore文件格式
-(```)
+```
 格式    :  JKS 
 扩展名  : .jks/.ks
 描述    : 【Java Keystore】密钥库的Java实现版本，provider为SUN
@@ -38,10 +38,10 @@
  格式   : UBER
  扩展名 : .ubr
  描述   : 【Bouncycastle UBER Keystore】密钥库的BC更安全实现版本，provider为BC
-(```)
+```
 
 ## 证书文件格式【Certificate】 
-(```)
+```
 格式    :  DER 
 扩展名  :  .cer/.crt/.rsa
 描述    : 【ASN .1 DER】用于存放证书 
@@ -80,11 +80,11 @@
 特点    :  微软公司特有的双证书文件格式，经常用于代码签名，其中
            1、pvk用于保存私钥
            2、spc用于保存公钥
-(```)
+```
 
 ## 常用命令
 * Create 
-(```)
+```
 <JAVA_HOME>\jre\bin>
 keytool -genkey -alias serverkey -keyalg RSA -dname "CN=tibco.com, OU=XXX CA, O=Tibco Inc, L=Xian, S=Shaanxi, C=CN" -keypass keypass -storepass storepass -keystore c:\keystore.jks 
 
@@ -96,28 +96,28 @@ keytool -genkey -keyalg RSA -alias selfsigned -keystore c:\keystore1.jks -storep
 keytool -genkey -v -alias robin_test_ssl -keyalg RSA -keystore c:\keystore2.jks -dname "CN=localhost,OU=cn,O=cn,L=cn,ST=cn,C=cn" -storepass storepass -keypass keypass  
 
 keytool -certreq -alias serverkey -sigalg "MD5withRSA" -file c:\cert.pem -keypass keypass -keystore c:\keystore.jks  -storepass storepass
-(```)
+```
 * Check 
-(```)
+```
 keytool -list -v -keystore c:\keystore.jks -storepass storepass 
-(```)
+```
 * Export
-(```)
+```
 keytool -export -alias serverkey -storepass storepass -file c:\server.cer -keystore c:\keystore.jks 
 keytool -export -alias alias.192.168.82.82 -storepass storepass -file c:\192.168.82.82.cer -keystore c:\192.168.82.82.jks
 keytool -export -alias key -storepass 111111 -file c:\key.cer -keystore c:\key.jks
-(```)
+```
 * Import
-(```)
+```
 keytool -import -alias serverkey -file server.cer -keystore truststore -storepass storepass
-(```)
+```
 * Convert from .cer(or .der) file
-(```)
+```
 keytool -import -v -alias alias -file cert_file -keystore keystore -storepass changeit
 Import above .cer(or .der) file into cacerts(JVM Security CA keystore) file
 keytool -import -v -alias CAcert -file cert_file -keystore ..\lib\security\cacerts -storepass changeit   //最后的changeit不要改
-(```)
+```
 * Delete
-(```)
+```
 keytool -delete -alias "oidserverkey" -keystore ..\lib\security\cacerts -storepass changeit //最后的changeit不要改
-(```)
+```
