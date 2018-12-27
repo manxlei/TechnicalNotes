@@ -1,20 +1,18 @@
-* 生成自签名证书：
+## 生成自签名证书：
 https://www.sslshopper.com/article-how-to-create-a-self-signed-certificate-using-java-keytool.html
 http://blog.csdn.net/lapiggy/article/details/2808124
 http://blog.csdn.net/tony1130/article/details/5134318
 
-* 数字证书
+## 数字证书
 数字证书: http://www.cnblogs.com/hyddd/archive/2009/01/07/1371292.html
 数字证书和SSL: http://www.2cto.com/Article/201203/121534.html 
 数字签名: http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html
 
-* Java数字证书体系
+## Java数字证书体系
 http://snowolf.iteye.com/blog/391931
-
-* PFX(*.p12)&个人信息交换文件
 http://snowolf.iteye.com/blog/383412
 
-* 常见KeyStore文件格式
+## 常见KeyStore文件格式
 格式    :  JKS 
 扩展名  : .jks/.ks
 描述    : 【Java Keystore】密钥库的Java实现版本，provider为SUN
@@ -40,7 +38,7 @@ http://snowolf.iteye.com/blog/383412
  扩展名 : .ubr
  描述   : 【Bouncycastle UBER Keystore】密钥库的BC更安全实现版本，provider为BC
 
-* 证书文件格式【Certificate】 
+## 证书文件格式【Certificate】 
 格式    :  DER 
 扩展名  :  .cer/.crt/.rsa
 描述    : 【ASN .1 DER】用于存放证书 
@@ -81,8 +79,8 @@ http://snowolf.iteye.com/blog/383412
            2、spc用于保存公钥
 
 
-* 常用命令
-Create 
+## 常用命令
+* Create 
 <JAVA_HOME>\jre\bin>
 keytool -genkey -alias serverkey -keyalg RSA -dname "CN=tibco.com, OU=XXX CA, O=Tibco Inc, L=Xian, S=Shaanxi, C=CN" -keypass keypass -storepass storepass -keystore c:\keystore.jks 
 
@@ -95,21 +93,21 @@ keytool -genkey -v -alias robin_test_ssl -keyalg RSA -keystore c:\keystore2.jks 
 
 keytool -certreq -alias serverkey -sigalg "MD5withRSA" -file c:\cert.pem -keypass keypass -keystore c:\keystore.jks  -storepass storepass
 
-Check 
+* Check 
 keytool -list -v -keystore c:\keystore.jks -storepass storepass 
 
-Export
+* Export
 keytool -export -alias serverkey -storepass storepass -file c:\server.cer -keystore c:\keystore.jks 
 keytool -export -alias alias.192.168.82.82 -storepass storepass -file c:\192.168.82.82.cer -keystore c:\192.168.82.82.jks
 keytool -export -alias key -storepass 111111 -file c:\key.cer -keystore c:\key.jks
  
-Import
+* Import
 keytool -import -alias serverkey -file server.cer -keystore truststore -storepass storepass
 
-Convert from .cer(or .der) file
+* Convert from .cer(or .der) file
 keytool -import -v -alias alias -file cert_file -keystore keystore -storepass changeit
 Import above .cer(or .der) file into cacerts(JVM Security CA keystore) file
 keytool -import -v -alias CAcert -file cert_file -keystore ..\lib\security\cacerts -storepass changeit   //最后的changeit不要改
 
-Delete
+* Delete
 keytool -delete -alias "oidserverkey" -keystore ..\lib\security\cacerts -storepass changeit //最后的changeit不要改
